@@ -12,7 +12,7 @@
     font-family: "Raleway", sans-serif;
 }
 
-:root {
+/* :root {
     --color-primary: #191d2b;
     --color-secondary: #27ae60;
     --color-white: #ffffff;
@@ -25,6 +25,22 @@
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
     --br-sm-2: 14px;
+    --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+} */
+
+:root {
+    --color-primary: #141414;
+    --color-secondary: #ff8c00;
+    --color-accent: #5da5da;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-gray-1: #e6e8ea;
+    --color-gray-2: #373737;
+    --color-gray-3: #2c2c2c;
+    --color-gray-4: #2d2d2d;
+    --color-random-green-1: #27ae60;
+    --color-random-cyan-2: #0a7b7c;
+    --color-random-white-3: #e2e2e2;
     --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -63,25 +79,24 @@ a {
 
 .btn_type_1 {
     padding: 0.3rem 1.75rem;
-    background-color: #27ae60;
-    border: 1px solid #27ae60;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
     border-radius: 4px;
     text-transform: capitalize;
     font-weight: 500;
     font-size: calc(0.8rem + 0.1vw);
-    color: #fff;
+    color: var(--color-white);
+    letter-spacing: 1px;
+}
+@media screen and (max-width: 600px) {
+    .btn_type_1 {
+        padding: 0.2rem 1.24rem;
+    }
 }
 
-/* .btn_type_2 {
-    padding: 0.3rem 1.75rem;
-    background-color: #27ae60;
-    border: 1px solid #27ae60;
-    border-radius: 4px;
-} */
 .btn_type_1:hover {
     border-radius: 30px 0 30px 0;
-    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.15),
-        3px 0px 5px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.9), 3px 0px 5px rgba(0, 0, 0, 0.9);
 }
 section {
     min-height: 100vh;
@@ -174,11 +189,14 @@ section {
     align-items: center;
     justify-content: center;
     transform: translateY(-50%);
+    background-color: var(--color-black);
+    padding: 11px 4px;
+    border-radius: 25px;
 }
 .controls .control {
     padding: 0.7rem;
     cursor: pointer;
-    background-color: var(--color-grey-4);
+    background-color: transparent;
     /* width: 55px;
     height: 55px; */
     border-radius: 50%;
@@ -189,8 +207,8 @@ section {
     box-shadow: var(--box-shadow-1);
 }
 .controls .control i {
-    font-size: 1.2rem;
-    color: var(--color-grey-2);
+    font-size: 1.1rem;
+    color: var(--color-white);
     pointer-events: none;
 }
 .controls .active-btn {
@@ -210,14 +228,14 @@ section {
 /* Tooltip text  style*/
 .tooltip .tooltiptext {
     visibility: hidden;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-white);
+    color: var(--color-black);
     text-align: center;
     padding: 2px 8px;
     border-radius: 3px;
     text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 300;
+    font-size: 12px;
+    font-weight: 500;
     position: absolute;
     z-index: 1;
     width: fit-content;
@@ -227,7 +245,7 @@ section {
     right: 110%;
     transform: translateY(-50%);
 }
-/* Show the tooltip text when you mouse over the tooltip container */
+
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
@@ -243,15 +261,15 @@ section {
         justify-content: center;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
-        background-color: transparent;
+        width: max-content;
+        padding: 5px 14px;
     }
     .controls .control {
-        padding: 0.5rem;
+        padding: 0.35rem;
         margin: 0 0.2rem;
     }
     .controls .control i {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .tooltip .tooltiptext {
         left: 50%;
@@ -272,7 +290,8 @@ section {
 }
 .fancy_sec_title h2 {
     font-size: calc(2.25rem + 4vw);
-    color: rgba(69, 66, 66, 0.2);
+    color: var(--color-black);
+    opacity: 0.5;
     font-weight: 600;
     width: 100%;
     text-transform: uppercase;
@@ -284,6 +303,6 @@ section {
     align-self: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #27ae60;
+    color: var(--color-secondary);
     font-weight: 600;
 }
