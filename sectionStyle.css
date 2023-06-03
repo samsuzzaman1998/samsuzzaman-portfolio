@@ -69,6 +69,9 @@
 .hero_right .hero_avatar {
     width: 100%;
     max-width: 300px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+    border-radius: 5px 5px 0 0;
+    padding: 10px 0 0;
 }
 
 @media screen and (min-width: 1100px) {
